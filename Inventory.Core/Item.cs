@@ -1,8 +1,8 @@
 // ===== NAMESPACE =====
 namespace Inventory.Core
 {
-    // ===== CLASS =====
-    public class Item
+    // ===== RECORD =====
+    public record Item
     {
         // ===== FIELDS =====
         public string Name => _name;

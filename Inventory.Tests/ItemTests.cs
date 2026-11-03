@@ -34,5 +34,23 @@ namespace Inventory.Tests
 
             Assert.That(material.GetValue(), Is.EqualTo(expected));
         }
+
+        [Test]
+        public void Equals_ReturnsTrueWhenDataIsIdentical()
+        {
+            Potion healthPotion1 = new Potion("HealthPotion", 20, 1);
+            Potion healthPotion2 = new Potion("HealthPotion", 20, 1);
+
+            Assert.That(healthPotion1.Equals(healthPotion2), Is.EqualTo(true));
+        }
+
+        [Test]
+        public void Equals_ReturnsFalseWhenDataDiffers()
+        {
+            Potion healthPotion = new Potion("HealthPotion", 20, 1);
+            Potion manaPotion = new Potion("ManaPotion", 30, 1);
+
+            Assert.That(healthPotion.Equals(manaPotion), Is.EqualTo(false));
+        }
     }
 }

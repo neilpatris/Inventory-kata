@@ -1,8 +1,8 @@
 // ===== NAMESPACE =====
 namespace Inventory.Core
 {
-    // ===== CLASS =====
-    public class Weapon : Item
+    // ===== RECORD =====
+    public record Weapon : Item
     {
         // ===== FIELDS =====
         public int Durability => _durability;

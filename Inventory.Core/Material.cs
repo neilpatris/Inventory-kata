@@ -4,8 +4,8 @@ using Inventory.Core.Enums;
 // ===== NAMESPACE =====
 namespace Inventory.Core
 {
-    // ===== CLASS =====
-    public class Material : Item
+    // ===== RECORD =====
+    public record Material : Item
     {
         // ===== FIELDS =====
         private const int RareMultiplier = 3;
