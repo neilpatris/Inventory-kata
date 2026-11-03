@@ -22,5 +22,10 @@ namespace Inventory.Core
         {
             return BaseValue * _durability / _maxDurability;
         }
+
+        public new string Describe()
+        {
+            return Name + " " + _durability + "/" + _maxDurability;
+        }
     }
 }

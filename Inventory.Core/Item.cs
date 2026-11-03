@@ -25,5 +25,10 @@ namespace Inventory.Core
         {
             return _baseValue;
         }
+
+        public string Describe()
+        {
+            return Name;
+        }
     }
 }

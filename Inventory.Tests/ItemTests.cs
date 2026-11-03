@@ -52,5 +52,15 @@ namespace Inventory.Tests
 
             Assert.That(healthPotion.Equals(manaPotion), Is.EqualTo(false));
         }
+
+        [Test]
+        public void Describe_DependsOnLabelWhileGetValueDoesNot()
+        {
+            Weapon sword = new Weapon("Sword", 100, 3, 50, 25);
+            Item swordItem = sword;
+
+            Assert.That(sword.Describe() == swordItem.Describe(), Is.EqualTo(false));
+            Assert.That(sword.GetValue() == swordItem.GetValue(), Is.EqualTo(true));
+        }
     }
 }
