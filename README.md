@@ -43,3 +43,15 @@ The tests also run on GitHub Actions at every push.
     Inventory.Core       Game logic: items, stacks and the inventory
     Inventory.Console    Console interface
     Inventory.Tests      NUnit tests for the items and the inventory
+
+## Design decisions
+
+Each category calculates its value differently, so I created an `Item` class with three child classes: `Weapon`, `Material`, and `Potion`. `Weapon` and `Material` use `override` to calculate their own value. `Potion` doesn't need it because its value is just the base value.
+
+A `Sword` and an `Axe` are not separate classes because they use the same formula, only the numbers are different. For rarity, the `Rarity` enum only tells if a material is common or rare. The `Material` class decides that rare materials are worth 3 times more.
+
+I used `record` for items because I consider two items equal when all their data is the same. A record handles this comparison automatically.
+
+Weight is a `readonly struct` because it's a small value that is often added together and doesn't change after being created.
+
+I used `new` on `Describe()` on purpose. It's just to demonstrate how it works, not because the project really needs it.
